@@ -1,0 +1,41 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+<h:head>
+	<title>Cadastro de aluno</title>
+</h:head>
+<h:body>
+   <h:form>
+    <h:commandLink value="Lista" action="listaAluno.xhtml" immediate="true" />
+	<h1>Cadastro de aluno</h1>
+   	<h:messages />
+    <h:panelGrid columns="2">
+	   	<h:outputText value="Nome: *" />
+	   	<h:inputText value="#{alunoController.aluno.nome}" 
+	   		required="true"
+	   		requiredMessage="O campo nome é obrigatorio!">
+	   		<f:validateLength minimum="3" maximum="20" />	
+	   	</h:inputText>
+		<h:outputText value="Matricula: *" />
+		<h:inputText value="#{alunoController.aluno.matricula}" 
+			required="true"
+			requiredMessage="O campo matricula é obrigatorio!">
+			<f:validateLength minimum="5" maximum="11" />
+		</h:inputText>   
+		<h:commandButton value="Salvar" action="#{alunoController.salvar}" />
+    </h:panelGrid>
+   </h:form>
+</h:body>
+
+</html>
+
+
+
+
+
+
+
